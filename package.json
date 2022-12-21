@@ -1,7 +1,7 @@
 {
-  "name": "change-project-name",
-  "version": "1.0.2",
-  "description": "A React utils functions.",
+  "name": "prettlint-config",
+  "version": "0.0.0",
+  "description": "A lib for configure Eslint, Prettier and editorconfig in your project.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -26,18 +26,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/change-autor/change-project-name.git"
+    "url": "git+https://github.com/wesleyara/prettlint-config.git"
   },
   "keywords": [
     "typescript",
     "javascript"
   ],
-  "author": "change-autor",
+  "author": "Wesley Araújo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/change-autor/change-project-name/issues"
+    "url": "https://github.com/wesleyara/prettlint-config/issues"
   },
-  "homepage": "https://github.com/change-autor/change-project-name#readme",
+  "homepage": "https://github.com/wesleyara/prettlint-config#readme",
   "dependencies": {
     "axios": "^1.2.0",
     "rimraf": "^3.0.2"
