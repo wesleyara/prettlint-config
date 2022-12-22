@@ -12,7 +12,10 @@
     "format:fix": "prettier --write .",
     "lint": "eslint --ext js,ts .",
     "lint:fix": "eslint --ext js,ts . --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && rm -rf build/temp"
   },
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": [
