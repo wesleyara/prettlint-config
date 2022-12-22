@@ -2,8 +2,7 @@
   "name": "prettlint-config",
   "version": "0.0.1",
   "description": "A lib for configure Eslint, Prettier and editorconfig in your project.",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "bin": "lib/script.js",
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
