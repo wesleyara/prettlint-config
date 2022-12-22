@@ -11,7 +11,6 @@
 
 <h4 align="center">
  <a href="#-how-use">:rocket: How use</a> •
- <a href="#️-tools">🛠️ Tools</a> •
  <a href="#-contributing">:pencil: Contributing</a> •
  <a href="#-thanks">:adult: Thanks</a> •
  <a href="#-license">:page_facing_up: License</a>
@@ -21,21 +20,13 @@
 
 # :rocket: How use
 
-Instalation:
+Utilization is very simple, just run the command:
 
 ```bash
-npm install prettlint-config
-#or
-yarn add prettlint-config
+npx prettlint-config
 ```
 
 Answer the questions (When choosing the tool, use the arrows keys to navigate, the spacebar to select and enter to finish)
-
-# 🛠️ Tools
-
-Example:
-
-for more information, see the docs, [Vanilla](/docs/vanilla.md) and [React](/docs/react.md)
 
 # :pencil: Contributing
 
