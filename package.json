@@ -40,6 +40,7 @@
   "homepage": "https://github.com/wesleyara/prettlint-config#readme",
   "dependencies": {
     "axios": "^1.2.0",
+    "down-git-files": "^1.0.1",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {

@@ -922,6 +922,14 @@ dot-prop@^5.1.0:
   dependencies:
     is-obj "^2.0.0"
 
+down-git-files@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/down-git-files/-/down-git-files-1.0.1.tgz#9361388580cdd31141d71d9bb86d83fef1221fba"
+  integrity sha512-HnZzHGFOm4FyRhJnSLLtREpR+jHmv0sGEYBbYPHwMVpXiEkr16KNfxLZuvQ9fLybn+wzPaJzyxCePJNyJlk79w==
+  dependencies:
+    axios "^1.2.0"
+    rimraf "^3.0.2"
+
 eastasianwidth@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
