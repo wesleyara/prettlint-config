@@ -23,3 +23,12 @@ export const nodeDependencies = [
   "eslint-plugin-promise",
   "prettier",
 ];
+
+export const settings: any = {
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "prettier.configPath": "./.prettierc",
+};
