@@ -1,11 +1,14 @@
 import { delay } from "utils-react";
 
-import { addDependencies } from "./utils/addDependencies";
-import { addFiles } from "./utils/addFiles";
-import { download } from "./utils/download";
-import { existsFile } from "./utils/existsFile";
-import { makeQuestions } from "./utils/makeQuestions";
-import { packageManager } from "./utils/packageManager";
+import {
+  vsCodeSettings,
+  addDependencies,
+  addFiles,
+  download,
+  existsFile,
+  makeQuestions,
+  packageManager,
+} from "./utils";
 
 const main = async () => {
   const { typeProject, isTypeScript } = await makeQuestions();
@@ -27,6 +30,10 @@ const main = async () => {
     await delay(200);
     await download(element.path, element.filename);
   }
+
+  console.log("");
+  console.log("Adding vscode settings...");
+  vsCodeSettings();
 
   console.log("Done!");
 };
