@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 
 import { deepClone } from ".";
 import { settings } from "./constants";
@@ -9,6 +9,12 @@ export const vsCodeSettings = () => {
   const existingSettings = existsSync(settingsPath);
 
   if (!existingSettings) {
+    const existingFolder = existsSync("./.vscode");
+
+    if (!existingFolder) {
+      mkdirSync("./.vscode");
+    }
+
     writeFileSync(settingsPath, JSON.stringify(settings));
   } else {
     const fileSettings = JSON.parse(readFileSync(settingsPath, "utf8"));
