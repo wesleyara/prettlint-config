@@ -18,7 +18,7 @@ const main = async () => {
   const managerMessage = await packageManager();
   await addDependencies(typeProject, isTypeScript, managerMessage);
 
-  const files = await addFiles(typeProject, isTypeScript);
+  const files = await addFiles(typeProject, isTypeScript === "Yes");
   console.log("Deleting existing files...");
   console.log("");
   await existsFile(files.map(file => file.filename));
