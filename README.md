@@ -30,7 +30,7 @@
 Utilization is very simple, just run the command:
 
 ```bash
-npx prettlint-config
+npx prettlint-config@latest
 ```
 
 Answer the questions (When choosing the tool, use the arrows keys to navigate, the spacebar to select and enter to finish)
