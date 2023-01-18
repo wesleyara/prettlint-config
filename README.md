@@ -8,7 +8,6 @@
 
 ![Captura de tela de 2022-12-22 15-36-54](https://user-images.githubusercontent.com/89321125/209203820-94b95e90-b421-44c3-a00b-7d156d88ff76.png)
 
-
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 [![npm version](https://img.shields.io/npm/v/prettlint-config.svg?style=flat-square)](https://www.npmjs.com/package/prettlint-config)
