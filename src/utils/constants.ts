@@ -30,5 +30,5 @@ export const settings: any = {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
   },
-  "prettier.configPath": "./.prettierc",
+  "prettier.configPath": "./.prettierrc.json",
 };
