@@ -20,8 +20,8 @@ export const addDependencies = async (
 
   isTypeScript === "Yes" &&
     dependenciesObject.dev_dependencies.push(
-      "@typescript-eslint/eslint-plugin@5.51.0",
-      "@typescript-eslint/parser@5.51.0",
+      "@typescript-eslint/eslint-plugin@6.7.0",
+      "@typescript-eslint/parser@6.7.0",
     );
 
   const dependencies = dependenciesObject.dev_dependencies.join(" ");
