@@ -9,6 +9,7 @@ import tseslint from "typescript-eslint";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  { ignores: ["node_modules/", "dist/", "build/", "coverage/", "lib/"] },
   {
     languageOptions: {
       parserOptions: {
@@ -33,7 +34,6 @@ export default [
     plugins: {
       pluginReact,
     },
-    ignores: ["node_modules", "dist", "build", "coverage", "lib"],
     rules: {
       "no-console": "off",
       "no-unused-vars": [
