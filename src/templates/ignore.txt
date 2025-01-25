@@ -1,7 +1,0 @@
-# folder for ignore
-
-/node_modules
-/lib
-/dist
-/build
-.husky
