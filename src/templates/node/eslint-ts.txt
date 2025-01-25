@@ -1,55 +1,61 @@
-{
-  "env": {
-    "es2021": true,
-    "node": true,
-    "jest": true
+import pluginJs from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
+import importPlugin from "eslint-plugin-import";
+import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  { files: ["**/*.{js,mjs,cjs,ts}"] },
+  {
+    languageOptions: {
+      globals: globals.node,
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
   },
-  "extends": [
-    "standard",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["eslint-plugin-import-helpers"],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+  pluginJs.configs.recommended,
+  eslintPluginPrettier,
+  eslintConfigPrettier,
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
+  ...tseslint.configs.recommended,
+  {
+    ignores: ["node_modules", "dist", "build", "coverage", "lib"],
+    rules: {
+      "no-console": "off",
+      "no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          singleQuote: false,
+          tabWidth: 2,
+          semi: true,
+          trailingComma: "all",
+          printWidth: 100,
+          endOfLine: "auto",
+          arrowParens: "avoid",
+        },
+      ],
+      "import/no-unresolved": "off",
+      "import/order": [
+        "error",
+        {
+          distinctGroup: false,
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+          "newlines-between": "always",
+        },
+      ],
+    },
   },
-  "rules": {
-    "import/prefer-default-export": "off",
-    "no-console": "off",
-    "import/extensions": "off",
-    "import/no-unresolved": "off",
-    "@typescript-eslint/ban-types": "off",
-    "no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_"
-      }
-    ],
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "interface",
-        "format": ["PascalCase"],
-        "custom": {
-          "regex": "^I[A-Z]",
-          "match": true
-        }
-      }
-    ],
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "newlinesBetween": "always",
-        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
-        "alphabetize": {
-          "order": "asc",
-          "ignoreCase": true
-        }
-      }
-    ]
-  }
-}
+];

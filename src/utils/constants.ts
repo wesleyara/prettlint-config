@@ -1,34 +1,30 @@
 export const reactDependencies = [
-  "eslint@8.34.0",
-  "eslint-config-prettier@8.6.0",
-  "eslint-config-standard@17.0.0",
-  "eslint-plugin-import@2.27.5",
-  "eslint-plugin-import-helpers@1.3.1",
-  "eslint-plugin-n@15.6.1",
-  "eslint-plugin-prettier@4.2.1",
-  "eslint-plugin-promise@6.1.1",
-  "eslint-plugin-react@7.32.2",
-  "eslint-plugin-react-hooks@4.6.0",
-  "prettier@2.8.4",
+  "@eslint/js",
+  "eslint",
+  "eslint-config-prettier",
+  "eslint-plugin-import",
+  "eslint-plugin-prettier",
+  "eslint-plugin-react",
+  "eslint-plugin-react-hooks",
+  "eslint-plugin-react-refresh",
+  "globals",
+  "prettier",
 ];
 
 export const nodeDependencies = [
-  "eslint@8.34.0",
-  "eslint-config-prettier@8.6.0",
-  "eslint-config-standard@17.0.0",
-  "eslint-plugin-import@2.27.5",
-  "eslint-plugin-import-helpers@1.3.1",
-  "eslint-plugin-n@15.6.1",
-  "eslint-plugin-prettier@4.2.1",
-  "eslint-plugin-promise@6.1.1",
-  "prettier@2.8.4",
+  "@eslint/js",
+  "eslint",
+  "eslint-config-prettier",
+  "eslint-plugin-import",
+  "eslint-plugin-prettier",
+  "globals",
+  "prettier",
 ];
 
-export const settings: any = {
+export const settings: { [key: string]: boolean | object } = {
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "always",
   },
-  "prettier.prettierPath": "./node_modules/prettier",
 };

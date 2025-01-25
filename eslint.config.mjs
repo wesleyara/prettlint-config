@@ -8,6 +8,7 @@ import tseslint from "typescript-eslint";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ["**/*.{js,mjs,cjs,ts}"] },
+  { ignores: ["node_modules/", "dist/", "build/", "coverage/", "lib/"] },
   {
     languageOptions: {
       globals: globals.node,
@@ -22,7 +23,6 @@ export default [
   importPlugin.flatConfigs.typescript,
   ...tseslint.configs.recommended,
   {
-    ignores: ["node_modules", "dist", "build", "coverage", "lib"],
     rules: {
       "no-console": "off",
       "no-unused-vars": [
@@ -56,6 +56,7 @@ export default [
           "newlines-between": "always",
         },
       ],
+      "@typescript-eslint/no-unused-expressions": "off",
     },
   },
 ];

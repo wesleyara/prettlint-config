@@ -1,4 +1,4 @@
-import { delay } from "utils-react";
+import { delay } from "essentials-utils";
 
 import {
   vsCodeSettings,
