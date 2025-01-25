@@ -56,6 +56,7 @@ export default [
           "newlines-between": "always",
         },
       ],
+      "@typescript-eslint/no-unused-expressions": "off",
     },
   },
 ];
