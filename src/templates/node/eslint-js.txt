@@ -7,13 +7,13 @@ import globals from "globals";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ["**/*.js,mjs,cjs"] },
+  { ignores: ["node_modules/", "dist/", "build/", "coverage/", "lib/"] },
   { languageOptions: { globals: globals.node } },
   eslintPluginPrettier,
   eslintConfigPrettier,
   importPlugin.flatConfigs.recommended,
   pluginJs.configs.recommended,
   {
-    ignores: ["node_modules", "dist", "build", "coverage", "lib"],
     rules: {
       "no-console": "off",
       "no-unused-vars": [
