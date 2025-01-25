@@ -8,6 +8,6 @@ describe("package tests", () => {
   });
 
   it("vscode settings", async () => {
-    expect(await vsCodeSettings()).toBe(true);
+    expect(vsCodeSettings()).toBe(true);
   });
 });

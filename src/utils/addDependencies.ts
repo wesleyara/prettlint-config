@@ -1,7 +1,8 @@
+import { delay } from "essentials-utils";
 import { exec } from "shelljs";
-import { delay } from "utils-react";
 
 import { IDependencies } from "../@types";
+
 import { nodeDependencies, reactDependencies } from "./constants";
 
 export const addDependencies = async (
@@ -18,11 +19,7 @@ export const addDependencies = async (
     ? dependenciesObject.dev_dependencies.push(...reactDependencies)
     : dependenciesObject.dev_dependencies.push(...nodeDependencies);
 
-  isTypeScript === "Yes" &&
-    dependenciesObject.dev_dependencies.push(
-      "@typescript-eslint/eslint-plugin@6.7.0",
-      "@typescript-eslint/parser@6.7.0",
-    );
+  isTypeScript === "Yes" && dependenciesObject.dev_dependencies.push("typescript-eslint");
 
   const dependencies = dependenciesObject.dev_dependencies.join(" ");
   const addMessage = `${managerMessage} ${dependencies} -D`;
