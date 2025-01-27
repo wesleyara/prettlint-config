@@ -55,7 +55,7 @@ export const initialQuestions: QuestionCollection = [
   {
     type: "list",
     name: "typeProject",
-    message: "Is this project in Node or React?",
+    message: "What type of project do you want to create?",
     choices: ["React", "Node", "Vue"],
     default: "React",
   },
