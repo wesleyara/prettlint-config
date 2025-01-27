@@ -1,13 +1,13 @@
 import { delay } from "essentials-utils";
 
 import {
-  vsCodeSettings,
   addDependencies,
   addFiles,
   download,
   existsFile,
   makeQuestions,
   packageManager,
+  vsCodeSettings,
 } from "./utils";
 import { initialQuestions, tailwindQuestions } from "./utils/constants";
 

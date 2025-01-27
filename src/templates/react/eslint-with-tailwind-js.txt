@@ -1,6 +1,6 @@
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-import";
+import perfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 import pluginReact from "eslint-plugin-react";
 import tailwind from "eslint-plugin-tailwindcss";
@@ -25,13 +25,12 @@ export default [
   pluginJs.configs.recommended,
   eslintPluginPrettier,
   eslintConfigPrettier,
-  importPlugin.flatConfigs.recommended,
-  importPlugin.flatConfigs.react,
   ...tailwind.configs["flat/recommended"],
   pluginReact.configs.flat.recommended,
   {
     plugins: {
       pluginReact,
+      perfectionist,
     },
     rules: {
       "no-console": "off",
@@ -54,19 +53,12 @@ export default [
           arrowParens: "avoid",
         },
       ],
-      "import/no-unresolved": "off",
-      "import/order": [
-        "error",
-        {
-          distinctGroup: false,
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
-          "newlines-between": "always",
-        },
-      ],
-      "react/react-in-jsx-scope": "off",
+      "react/react-in-jsx-scope": "off",      
+      "perfectionist/sort-imports": "error",
+      "perfectionist/sort-jsx-props": "error",
+      "perfectionist/sort-modules": "error",
+      "perfectionist/sort-named-imports": "error",
+      "perfectionist/sort-union-types": "error",
       "tailwindcss/classnames-order": "error",
       "tailwindcss/enforces-negative-arbitrary-values": "error",
       "tailwindcss/enforces-shorthand": "error",
