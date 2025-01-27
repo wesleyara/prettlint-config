@@ -9,33 +9,48 @@ import {
   makeQuestions,
   packageManager,
 } from "./utils";
+import { initialQuestions, tailwindQuestions } from "./utils/constants";
 
-const main = async () => {
-  const { typeProject, isTypeScript } = await makeQuestions();
+(async () => {
+  const { typeProject, isTypeScript } = await makeQuestions(initialQuestions);
+  const isTypeScriptBool = isTypeScript === "Yes";
+  let isTailwindBool = false;
+
+  if (typeProject === "React") {
+    const response = await makeQuestions(tailwindQuestions);
+
+    isTailwindBool = response.isTailwind === "Yes";
+  }
   console.log("Installing dependencies...");
   console.log("");
 
   const managerMessage = await packageManager();
-  await addDependencies(typeProject, isTypeScript, managerMessage);
+  await addDependencies({
+    typeProject,
+    isTypeScript: isTypeScriptBool,
+    isTailwind: isTailwindBool,
+    managerMessage,
+  });
 
-  const files = await addFiles(typeProject, isTypeScript === "Yes");
+  const files = await addFiles({
+    typeProject,
+    isTypeScript: isTypeScriptBool,
+    isTailwind: isTailwindBool,
+  });
   console.log("Deleting existing files...");
   console.log("");
-  await existsFile(files.map(file => file.filename));
 
-  for (let i = 0; i < files.length; i++) {
-    const element = files[i];
+  const filenames = files.map(file => file.filename);
+  await existsFile(filenames);
 
-    console.log(`Downloading ${element.filename}...`);
+  for (const file of files) {
+    console.log(`Downloading ${file.filename}...`);
     await delay(200);
-    await download(element.path, element.filename);
+    await download(file.path, file.filename);
   }
-
   console.log("");
   console.log("Adding vscode settings...");
   vsCodeSettings();
 
   console.log("Done!");
-};
-
-main();
+})();

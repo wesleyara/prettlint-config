@@ -1,3 +1,5 @@
+import { QuestionCollection } from "inquirer";
+
 export const reactDependencies = [
   "@eslint/js",
   "eslint",
@@ -28,3 +30,30 @@ export const settings: { [key: string]: boolean | object } = {
     "source.fixAll.eslint": "always",
   },
 };
+
+export const initialQuestions: QuestionCollection = [
+  {
+    type: "list",
+    name: "typeProject",
+    message: "Is this project in Node or React?",
+    choices: ["React", "Node"],
+    default: "React",
+  },
+  {
+    type: "list",
+    name: "isTypeScript",
+    message: "Is this project in TypeScript?",
+    choices: ["Yes", "No"],
+    default: "Yes",
+  },
+];
+
+export const tailwindQuestions: QuestionCollection = [
+  {
+    type: "list",
+    name: "isTailwind",
+    message: "Do you want to use Tailwind CSS?",
+    choices: ["Yes", "No"],
+    default: "Yes",
+  },
+];
