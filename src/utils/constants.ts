@@ -13,6 +13,20 @@ export const reactDependencies = [
   "prettier",
 ];
 
+export const vueDependencies = [
+  "@eslint/js",
+  "eslint",
+  "eslint-config-prettier",
+  "eslint-plugin-perfectionist",
+  "eslint-plugin-prettier",
+  "eslint-plugin-react",
+  "eslint-plugin-react-hooks",
+  "eslint-plugin-react-refresh",
+  "globals",
+  "prettier",
+  "eslint-plugin-vue",
+];
+
 export const nodeDependencies = [
   "@eslint/js",
   "eslint",
@@ -22,6 +36,12 @@ export const nodeDependencies = [
   "globals",
   "prettier",
 ];
+
+export const dependenciesMap = {
+  react: reactDependencies,
+  node: nodeDependencies,
+  vue: vueDependencies,
+};
 
 export const settings: { [key: string]: boolean | object } = {
   "editor.formatOnSave": true,
@@ -36,7 +56,7 @@ export const initialQuestions: QuestionCollection = [
     type: "list",
     name: "typeProject",
     message: "Is this project in Node or React?",
-    choices: ["React", "Node"],
+    choices: ["React", "Node", "Vue"],
     default: "React",
   },
   {
