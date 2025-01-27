@@ -1,8 +1,12 @@
 import { delay } from "essentials-utils";
 import { exec } from "shelljs";
 
-import { nodeDependencies, reactDependencies } from "../constants";
-import { AddDependenciesProps, DependenciesTypes } from "./models/add-dependencies.models";
+import { dependenciesMap } from "../constants";
+import {
+  AddDependenciesProps,
+  DependenciesMapType,
+  DependenciesTypes,
+} from "./models/add-dependencies.models";
 
 export const addDependencies = async ({
   typeProject,
@@ -15,9 +19,9 @@ export const addDependencies = async ({
     dev_dependencies: [],
   };
 
-  typeProject === "React"
-    ? dependenciesObject.dev_dependencies.push(...reactDependencies)
-    : dependenciesObject.dev_dependencies.push(...nodeDependencies);
+  dependenciesObject.dev_dependencies.push(
+    ...dependenciesMap[typeProject.toLowerCase() as DependenciesMapType],
+  );
 
   isTypeScript && dependenciesObject.dev_dependencies.push("typescript-eslint");
   isTailwind && dependenciesObject.dev_dependencies.push("eslint-plugin-tailwindcss");

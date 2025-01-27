@@ -2,22 +2,17 @@ import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import perfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
-import pluginReact from "eslint-plugin-react";
+import pluginVue from "eslint-plugin-vue";
 import tailwind from "eslint-plugin-tailwindcss";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  { files: ["**/*.{js,mjs,cjs,ts,vue}"] },
   { ignores: ["node_modules/", "dist/", "build/", "coverage/", "lib/"] },
   {
     languageOptions: {
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
       globals: globals.browser,
       ecmaVersion: "latest",
       sourceType: "module",
@@ -28,10 +23,12 @@ export default [
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
   ...tailwind.configs["flat/recommended"],
-  pluginReact.configs.flat.recommended,
+  ...pluginVue.configs["flat/essential"],
   {
+    languageOptions: {
+      parserOptions: { parser: tseslint.parser },
+    },
     plugins: {
-      pluginReact,
       perfectionist,
     },
     rules: {
@@ -55,9 +52,7 @@ export default [
           arrowParens: "avoid",
         },
       ],
-      "react/react-in-jsx-scope": "off",
       "perfectionist/sort-imports": "error",
-      "perfectionist/sort-jsx-props": "error",
       "perfectionist/sort-modules": "error",
       "perfectionist/sort-named-imports": "error",
       "perfectionist/sort-union-types": "error",
