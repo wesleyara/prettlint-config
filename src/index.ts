@@ -3,8 +3,8 @@ import { delay } from "essentials-utils";
 import {
   addDependencies,
   addFiles,
+  deleteExistsFiles,
   download,
-  existsFile,
   makeQuestions,
   packageManager,
   vsCodeSettings,
@@ -40,8 +40,7 @@ import { initialQuestions, tailwindQuestions } from "./utils/constants";
   console.log("Deleting existing files...");
   console.log("");
 
-  const filenames = files.map(file => file.filename);
-  await existsFile(filenames);
+  await deleteExistsFiles();
 
   for (const file of files) {
     console.log(`Downloading ${file.filename}...`);
