@@ -16,7 +16,7 @@ import { initialQuestions, tailwindQuestions } from "./utils/constants";
   const isTypeScriptBool = isTypeScript === "Yes";
   let isTailwindBool = false;
 
-  if (typeProject === "React") {
+  if (typeProject !== "Node") {
     const response = await makeQuestions(tailwindQuestions);
 
     isTailwindBool = response.isTailwind === "Yes";
