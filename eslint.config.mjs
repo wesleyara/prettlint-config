@@ -1,6 +1,6 @@
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-import";
+import perfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -19,10 +19,11 @@ export default [
   pluginJs.configs.recommended,
   eslintPluginPrettier,
   eslintConfigPrettier,
-  importPlugin.flatConfigs.recommended,
-  importPlugin.flatConfigs.typescript,
   ...tseslint.configs.recommended,
   {
+    plugins: {
+      perfectionist,
+    },
     rules: {
       "no-console": "off",
       "no-unused-vars": [
@@ -44,19 +45,11 @@ export default [
           arrowParens: "avoid",
         },
       ],
-      "import/no-unresolved": "off",
-      "import/order": [
-        "error",
-        {
-          distinctGroup: false,
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
-          "newlines-between": "always",
-        },
-      ],
       "@typescript-eslint/no-unused-expressions": "off",
+      "perfectionist/sort-imports": "error",
+      "perfectionist/sort-modules": "error",
+      "perfectionist/sort-named-imports": "error",
+      "perfectionist/sort-union-types": "error",
     },
   },
 ];
