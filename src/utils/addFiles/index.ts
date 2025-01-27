@@ -2,7 +2,7 @@ import { AddFilesProps } from "./models/add-files.models";
 
 export const addFiles = async ({ typeProject, isTypeScript, isTailwind }: AddFilesProps) => {
   const extension = isTypeScript ? "ts" : "js";
-  const folder = typeProject === "React" ? "react" : "node";
+  const folder = typeProject.toLowerCase();
   const file = isTailwind ? "eslint-with-tailwind" : "eslint";
 
   const files = [

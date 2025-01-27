@@ -36,7 +36,7 @@ export default [
           endOfLine: "auto",
           arrowParens: "avoid",
         },
-      ],      
+      ],
       "perfectionist/sort-imports": "error",
       "perfectionist/sort-modules": "error",
       "perfectionist/sort-named-imports": "error",

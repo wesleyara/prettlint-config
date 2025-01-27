@@ -51,7 +51,7 @@ export default [
           arrowParens: "avoid",
         },
       ],
-      "react/react-in-jsx-scope": "off",      
+      "react/react-in-jsx-scope": "off",
       "perfectionist/sort-imports": "error",
       "perfectionist/sort-jsx-props": "error",
       "perfectionist/sort-modules": "error",
