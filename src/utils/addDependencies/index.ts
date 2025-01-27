@@ -2,7 +2,6 @@ import { delay } from "essentials-utils";
 import { exec } from "shelljs";
 
 import { nodeDependencies, reactDependencies } from "../constants";
-
 import { AddDependenciesProps, DependenciesTypes } from "./models/add-dependencies.models";
 
 export const addDependencies = async ({
