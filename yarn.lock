@@ -1592,10 +1592,10 @@ esrecurse@^4.3.0:
   dependencies:
     estraverse "^5.2.0"
 
-essentials-utils@^1.2.9:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/essentials-utils/-/essentials-utils-1.2.9.tgz#2d078c4b4028bfa783ea34f6e598c7e9506bfebd"
-  integrity sha512-7AIo5TeZBBjAcLQZaWgttHvg2G0vTgRxfctkWgZ19Qd+PivS3kuwH9XiV+IIoIB0WhxpbMsuLAYXRYa/PEnwxg==
+essentials-utils@^1.2.10:
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/essentials-utils/-/essentials-utils-1.2.10.tgz#c99647e1819a6dd16f24981590952b9006dfbc77"
+  integrity sha512-hfX0xKpCLZB7kwVPE0/W6SJOma96kEevpa3gxkzITCkuaO8+tDcICMgnBn6tbTCHwyJd6bkxRwSjmf6v5z2M1w==
   dependencies:
     crypto-js "^4.2.0"
     react "^18.2.0"
