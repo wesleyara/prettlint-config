@@ -22,6 +22,7 @@ export const vueDependencies = [
   "globals",
   "prettier",
   "eslint-plugin-vue",
+  "vue-eslint-parser",
 ];
 
 export const nodeDependencies = [
